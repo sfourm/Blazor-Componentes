@@ -52,6 +52,11 @@ using Blazor_Tarefas.Entidades;
 
 #line default
 #line hidden
+#line 9 "C:\Users\samue\Documents\GitHub\Blazor - Componentes\Blazor-Componentes\Blazor_Tarefas\Blazor_Tarefas\_Imports.razor"
+using Blazor_Tarefas.Repositorios;
+
+#line default
+#line hidden
     public partial class TarefaIndividual : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -59,9 +64,11 @@ using Blazor_Tarefas.Entidades;
         {
         }
         #pragma warning restore 1998
-#line 5 "C:\Users\samue\Documents\GitHub\Blazor - Componentes\Blazor-Componentes\Blazor_Tarefas\Blazor_Tarefas\Shared\TarefaIndividual.razor"
+#line 8 "C:\Users\samue\Documents\GitHub\Blazor - Componentes\Blazor-Componentes\Blazor_Tarefas\Blazor_Tarefas\Shared\TarefaIndividual.razor"
       
     [Parameter] public Tarefa item { get; set; }
+    //passagem de um evento como parametro
+    [Parameter] public EventCallback<Tarefa> RemoverTarefa { get; set; }
 
 #line default
 #line hidden

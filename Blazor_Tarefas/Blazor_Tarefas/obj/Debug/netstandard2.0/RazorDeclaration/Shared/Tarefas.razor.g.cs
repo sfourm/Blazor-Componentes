@@ -52,6 +52,11 @@ using Blazor_Tarefas.Entidades;
 
 #line default
 #line hidden
+#line 9 "C:\Users\samue\Documents\GitHub\Blazor - Componentes\Blazor-Componentes\Blazor_Tarefas\Blazor_Tarefas\_Imports.razor"
+using Blazor_Tarefas.Repositorios;
+
+#line default
+#line hidden
     public partial class Tarefas : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -59,13 +64,48 @@ using Blazor_Tarefas.Entidades;
         {
         }
         #pragma warning restore 1998
-#line 46 "C:\Users\samue\Documents\GitHub\Blazor - Componentes\Blazor-Componentes\Blazor_Tarefas\Blazor_Tarefas\Shared\Tarefas.razor"
+#line 37 "C:\Users\samue\Documents\GitHub\Blazor - Componentes\Blazor-Componentes\Blazor_Tarefas\Blazor_Tarefas\Shared\Tarefas.razor"
       
 
     [Parameter] public List<Tarefa> tarefas { get; set; }
     [Parameter] public string Titulo { get; set; }
 
     private string novaTarefa = "";
+
+    //instancia do componente Confirma 
+    Confirma confirmacao;
+
+    Tarefa tarefaRemover;
+
+    private void RemoveTarefa(Tarefa tarefa)
+    {
+        //confirmacao.Exibir();
+        //tarefaRemover = tarefa;
+        //var resultado =
+        //    await js.InvokeAsync<bool>("confirm", "Excluir Tarefa ?");
+
+        var resultado = ((IJSInProcessRuntime)js).Invoke<bool>("confirm", "Excluir esta tarefa ?");
+
+        if(resultado)
+        {
+            tarefas.Remove(tarefa);
+            //await js.InvokeVoidAsync("alert", "Tarefa excluida com sucesso");
+            //await js.InvokeAsync<object>("MostraAlerta", "Ok, tarefa excluida !!!");
+        }
+    }
+
+    void RemoverTarefaConfirmacao()
+    {
+        tarefas.Remove(tarefaRemover);
+        tarefaRemover = null;
+        confirmacao.Ocultar();
+    }
+
+    void CancelaConfirmacao()
+    {
+        confirmacao.Ocultar();
+        tarefaRemover = null;
+    }
 
     void AdicionarNovaTarefa()
     {
@@ -81,13 +121,9 @@ using Blazor_Tarefas.Entidades;
         }
     }
 
-    private void RemoveTarefa(Guid id)
-    {
-        tarefas.Remove(tarefas.First(x => x.ID == id));
-    }
-
 #line default
 #line hidden
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJs js { get; set; }
     }
 }
 #pragma warning restore 1591

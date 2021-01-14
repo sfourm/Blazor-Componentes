@@ -1,5 +1,4 @@
-using Microsoft.AspNetCore.Components.Builder;
-using Microsoft.Extensions.DependencyInjection;
+using Blazor_Tarefas.Repositorios;
 
 namespace Blazor_Tarefas
 {
@@ -7,6 +6,7 @@ namespace Blazor_Tarefas
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IRepositorio, Repositorio>();
         }
 
         public void Configure(IComponentsApplicationBuilder app)

@@ -52,6 +52,11 @@ using Blazor_Tarefas.Entidades;
 
 #line default
 #line hidden
+#line 9 "C:\Users\samue\Documents\GitHub\Blazor - Componentes\Blazor-Componentes\Blazor_Tarefas\Blazor_Tarefas\_Imports.razor"
+using Blazor_Tarefas.Repositorios;
+
+#line default
+#line hidden
     [Microsoft.AspNetCore.Components.RouteAttribute("/databinding")]
     public partial class DataBinding : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -60,7 +65,7 @@ using Blazor_Tarefas.Entidades;
         {
         }
         #pragma warning restore 1998
-#line 12 "C:\Users\samue\Documents\GitHub\Blazor - Componentes\Blazor-Componentes\Blazor_Tarefas\Blazor_Tarefas\Pages\DataBinding.razor"
+#line 13 "C:\Users\samue\Documents\GitHub\Blazor - Componentes\Blazor-Componentes\Blazor_Tarefas\Blazor_Tarefas\Pages\DataBinding.razor"
        
     public string nome { get; set; } = "Blazor";
 

@@ -52,6 +52,11 @@ using Blazor_Tarefas.Entidades;
 
 #line default
 #line hidden
+#line 9 "C:\Users\samue\Documents\GitHub\Blazor - Componentes\Blazor-Componentes\Blazor_Tarefas\Blazor_Tarefas\_Imports.razor"
+using Blazor_Tarefas.Repositorios;
+
+#line default
+#line hidden
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -62,12 +67,11 @@ using Blazor_Tarefas.Entidades;
         #pragma warning restore 1998
 #line 6 "C:\Users\samue\Documents\GitHub\Blazor - Componentes\Blazor-Componentes\Blazor_Tarefas\Blazor_Tarefas\Pages\Index.razor"
        
-
     List<Tarefa> tarefas = new List<Tarefa>();
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
-        tarefas = await http.GetJsonAsync<List<Tarefa>>("dados/tarefas.json");
+        tarefas = repositorio.ObterTarefas();
     }
 
     private List<Tarefa> GetTarefas()
@@ -75,10 +79,9 @@ using Blazor_Tarefas.Entidades;
         return tarefas;
     }
 
-
 #line default
 #line hidden
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient http { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IRepositorio repositorio { get; set; }
     }
 }
 #pragma warning restore 1591

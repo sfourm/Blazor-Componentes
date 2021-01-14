@@ -52,6 +52,11 @@ using Blazor_Tarefas.Entidades;
 
 #line default
 #line hidden
+#line 9 "C:\Users\samue\Documents\GitHub\Blazor - Componentes\Blazor-Componentes\Blazor_Tarefas\Blazor_Tarefas\_Imports.razor"
+using Blazor_Tarefas.Repositorios;
+
+#line default
+#line hidden
     public partial class MainLayout : LayoutComponentBase
     {
         #pragma warning disable 1998

@@ -52,6 +52,11 @@ using Blazor_Tarefas.Entidades;
 
 #line default
 #line hidden
+#line 9 "C:\Users\samue\Documents\GitHub\Blazor - Componentes\Blazor-Componentes\Blazor_Tarefas\Blazor_Tarefas\_Imports.razor"
+using Blazor_Tarefas.Repositorios;
+
+#line default
+#line hidden
     public partial class Alerta : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -59,9 +64,10 @@ using Blazor_Tarefas.Entidades;
         {
         }
         #pragma warning restore 1998
-#line 7 "C:\Users\samue\Documents\GitHub\Blazor - Componentes\Blazor-Componentes\Blazor_Tarefas\Blazor_Tarefas\Shared\Alerta.razor"
+#line 22 "C:\Users\samue\Documents\GitHub\Blazor - Componentes\Blazor-Componentes\Blazor_Tarefas\Blazor_Tarefas\Shared\Alerta.razor"
        
-      [Parameter] public string Mensagem { get; set; }
+    [Parameter] public RenderFragment Conteudo1 { get; set; }
+    [Parameter] public RenderFragment Conteudo2 { get; set; }
 
 #line default
 #line hidden
